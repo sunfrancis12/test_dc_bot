@@ -1,7 +1,12 @@
 from genericpath import commonprefix
+
+from isort import file
 import discord
 from discord.ext import commands
 import json
+import os
+
+
 
 intents = discord.Intents.all()
 
@@ -18,16 +23,17 @@ async def on_ready():
 @bot.event
 async def on_member_join(member):
     channel = bot.get_channel(701804743206502453) 
-    await channel.sned(f"{member} hello!")
+    await channel.send(f"{member} hello!")
     print(f"{member}join!")
 
 @bot.event
 async def on_member_remove(member):
     print(f"{member}leave!")
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send(f"{round(bot.latency*1000)}(ms)")
-    
-bot.run(setting["TOKEN"])
+for filename in os.listdir("./cmds"):
+    if filename.endswith(".py"):
+        bot.load_extension(f"cmds.{filename[:-3]}")
+
+if __name__ == "__main__":
+    bot.run(setting["TOKEN"])
 
