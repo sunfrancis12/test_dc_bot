@@ -1,6 +1,6 @@
 from genericpath import commonprefix
+import isort
 
-from isort import file
 import discord
 from discord.ext import commands
 import json
@@ -20,15 +20,7 @@ bot = commands.Bot(command_prefix="!", intents = intents)
 async def on_ready():
     print("bot is online")
     
-@bot.event
-async def on_member_join(member):
-    channel = bot.get_channel(701804743206502453) 
-    await channel.send(f"{member} hello!")
-    print(f"{member}join!")
 
-@bot.event
-async def on_member_remove(member):
-    print(f"{member}leave!")
 
 for filename in os.listdir("./cmds"):
     if filename.endswith(".py"):

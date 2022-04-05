@@ -1,9 +1,13 @@
 from genericpath import commonprefix
 
-from isort import file
+
 import discord
 from discord.ext import commands
 import json
+from discord import FFmpegPCMAudio
+import youtube_dl
+import asyncio
+import os
 
 from core.classes import Cog_extension
 
@@ -19,8 +23,10 @@ class Event(Cog_extension):
         print(f"{member}join!")
 
     @commands.Cog.listener()
-    async def on_member_remove(member):
+    async def on_member_remove(self,member):
         print(f"{member}leave!")
+    
+    
 
 def setup(bot):
     bot.add_cog(Event(bot))
