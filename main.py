@@ -1,5 +1,4 @@
 from genericpath import commonprefix
-import isort
 
 import discord
 from discord.ext import commands

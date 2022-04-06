@@ -7,10 +7,7 @@ from core.classes import Cog_extension
 import discord
 from discord.ext import commands
 from discord import FFmpegPCMAudio
-import json
-import youtube_dl
-import asyncio
-import os
+
 
 class Cmds(Cog_extension):
 

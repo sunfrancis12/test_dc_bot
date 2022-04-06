@@ -4,10 +4,8 @@ from genericpath import commonprefix
 import discord
 from discord.ext import commands
 from discord import FFmpegPCMAudio
-import json
-import os
 import youtube_dl
-import asyncio
+
 
 
 from core.classes import Cog_extension
