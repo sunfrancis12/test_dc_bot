@@ -3,13 +3,13 @@ from genericpath import commonprefix
 
 import discord
 from discord.ext import commands
-import json
 from discord import FFmpegPCMAudio
 import youtube_dl
 import asyncio
 import os
 
 from core.classes import Cog_extension
+
 
 class Welcome(Cog_extension):
     
